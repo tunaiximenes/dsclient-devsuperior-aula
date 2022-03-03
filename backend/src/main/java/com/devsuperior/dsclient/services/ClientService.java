@@ -6,6 +6,8 @@ import com.devsuperior.dsclient.repositories.ClientRepository;
 import com.devsuperior.dsclient.services.exceptions.ResourceNotFoundException;
 import jdk.jfr.Category;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.data.domain.Page;
+import org.springframework.data.domain.PageRequest;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
 import javax.persistence.EntityNotFoundException;
@@ -18,6 +20,12 @@ public class ClientService {
 
     @Autowired
     private ClientRepository repository;
+
+    @Transactional(readOnly = true)
+    public Page<ClientDTO> findAllPaged(PageRequest pageRequest) {
+        Page<Client> list = repository.findAll(pageRequest);
+        return list.map(ClientDTO::new);
+    }
 
     @Transactional(readOnly = true)
     public ClientDTO findById(Long id){
