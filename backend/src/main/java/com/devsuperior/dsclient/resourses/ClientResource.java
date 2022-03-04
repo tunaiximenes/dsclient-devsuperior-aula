@@ -13,8 +13,10 @@ import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 import org.springframework.transaction.annotation.Transactional;
 import org.springframework.web.bind.annotation.*;
+import org.springframework.web.servlet.support.ServletUriComponentsBuilder;
 
 import javax.validation.Valid;
+import java.net.URI;
 import java.util.Optional;
 
 @RestController
@@ -43,14 +45,30 @@ public class ClientResource {
 
         return ResponseEntity.ok().body(list);
     }
-
-
     //Obter uma categoria por ID
     @GetMapping(value = "/{id}")
     public ResponseEntity<ClientDTO> findById(@PathVariable Long id) {
         ClientDTO dto = clientService.findById(id);
         return ResponseEntity.ok().body(dto);
     }
+    //Inserir Cliente
+    @PostMapping
+    public ResponseEntity<ClientDTO> insert(@RequestBody ClientDTO dto) {
+        dto = clientService.insert(dto);
+        URI uri = ServletUriComponentsBuilder.fromCurrentRequest().path("/{id}").buildAndExpand(dto.getId()).toUri();
+        return ResponseEntity.created(uri).body(dto);
+    }
+    //Update no cadastro de cliente
+    @PutMapping(value = "/{id}")
+    public ResponseEntity<ClientDTO> update(@PathVariable Long id, @RequestBody ClientDTO dto) {
+        dto = clientService.update(id, dto);
+        return ResponseEntity.ok().body(dto);
+    }
 
-
+    //Delete no cadastro do cliente
+    @DeleteMapping(value = "/{id}")
+    public ResponseEntity<Void> delete(@PathVariable Long id) {
+        clientService.delete(id);
+        return ResponseEntity.noContent().build();
+    }
 }
