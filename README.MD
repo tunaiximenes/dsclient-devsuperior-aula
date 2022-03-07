@@ -54,9 +54,9 @@ As seguintes ferramentas foram usadas na construção do projeto:
 
 Antes de começar, você vai precisar ter instalado em sua máquina as seguintes ferramentas:
 
-* IDE para desenvolvimento JAVA como Inteliji(a mesma que usei) ou Spring Tool Suite 4
+* IDE para desenvolvimento JAVA como IntelliJ ou Spring Tool Suite 4
 * Gerenciador de dependencias maven
-* para testar os verbos HTTP utilize o Insominia ou Postman
+* para testar os verbos HTTP utilize o Postman
 
 ---
 
@@ -70,11 +70,11 @@ $ git clone <https://github.com/tunaiximenes/dsclient-devsuperior-aula.git>
 
 # Aguarde a sincronização das dependencias do Maven
 
-# Execute a aplicação (está no profile test por se tratar de um projeto desenvolvido com intuito de estudo)
+# Execute a aplicação
 
-#caso queira alterar o seed do banco de dados altere os dados no arquivo resoruces/data.sql
+# caso queira alterar o seed do banco de dados altere os dados no arquivo resources/data.sql
 
-# O servidor inciará na porta:8080 - abra o Insominia/Postman e execute os verbos HTML na url <http://localhost:8080/clients>
+# O servidor inciará na porta:8080 - abra o Postman e execute os verbos HTML na url <http://localhost:8080/clients>
 
 ```
 
