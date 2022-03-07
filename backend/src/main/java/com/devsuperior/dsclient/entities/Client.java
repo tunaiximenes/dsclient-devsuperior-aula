@@ -16,7 +16,7 @@ public class Client implements Serializable {
     private Long id;
     @Column(nullable = false, length = 130)
     private String name;
-    @Column(nullable = false, unique = true, length = 11)
+    @Column(nullable = false, length = 11)
     private String cpf;
     @Column(nullable = false)
     private Double income;
