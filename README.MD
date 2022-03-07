@@ -124,6 +124,30 @@ $ git clone <https://github.com/tunaiximenes/dsclient-devsuperior-aula.git>
 {
     "content": [
         {
+            "id": 12,
+            "name": "Alana Anthony",
+            "cpf": "54511756772",
+            "income": 1174.56,
+            "birthDate": "2000-07-23T10:27:57Z",
+            "children": 0
+        },
+        {
+            "id": 17,
+            "name": "Ali Reyes",
+            "cpf": "31808289035",
+            "income": 5272.47,
+            "birthDate": "1988-06-29T00:21:33Z",
+            "children": 0
+        },
+        {
+            "id": 65,
+            "name": "Alvin Riggs",
+            "cpf": "39047892021",
+            "income": 2272.84,
+            "birthDate": "1979-02-23T07:25:23Z",
+            "children": 4
+        },
+        {
             "id": 55,
             "name": "Aristotle Guy",
             "cpf": "93479109251",
@@ -154,19 +178,19 @@ $ git clone <https://github.com/tunaiximenes/dsclient-devsuperior-aula.git>
             "unsorted": false,
             "empty": false
         },
-        "pageNumber": 1,
-        "pageSize": 3,
-        "offset": 3,
+        "pageNumber": 0,
+        "pageSize": 6,
+        "offset": 0,
         "unpaged": false,
         "paged": true
     },
     "last": false,
-    "totalPages": 34,
+    "totalPages": 17,
     "totalElements": 100,
-    "first": false,
-    "numberOfElements": 3,
-    "size": 3,
-    "number": 1,
+    "first": true,
+    "numberOfElements": 6,
+    "size": 6,
+    "number": 0,
     "sort": {
         "sorted": true,
         "unsorted": false,
